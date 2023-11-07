@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Random Color Picker</title>
+<style>
+.head{
+font-family:cambria;
+color:blue;
+}
+#picker{
+width:400px;
+height:500px;
+border:1px solid black;
+}
+</style>
+</head>
+<body>
+<h1 align="center" class="head">Random Color Picker</h1>
+<div id="color">
+<input type="button" value="color" id="d">
+</div>
+<br>
+<div id="picker">
+</div>
+<script>
+document.getElementById("d").addEventListener("click",pic);
+
+function pic(){
+let a='#';
+let c='0123456789ABCDEF';
+for(i=0;i<6;i++){
+let k=Math.floor(Math.random()*16);
+a+=c[k];
+}
+console.log(a);
+let t=document.getElementById("picker");
+t.style.backgroundColor=a;
+}
+pic();
+</script>
+</body>
+</html>
